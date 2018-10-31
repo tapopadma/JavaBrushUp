@@ -188,9 +188,9 @@ public class ChainOfResponsibilityATMMachineDemo {
 		
 		public ATM() {
 			atmMachine = new ATMMachine();
-			c1 = new DollarTenDispenser();c1.setATMMachine(atmMachine);
+			c1 = new DollarHundredDispenser();c1.setATMMachine(atmMachine);
 			c2 = new DollarTwentyDispenser();c2.setATMMachine(atmMachine);
-			c3 = new DollarHundredDispenser();c3.setATMMachine(atmMachine);
+			c3 = new DollarTenDispenser();c3.setATMMachine(atmMachine);
 			c1.setNextDispenseChain(c2);c2.setNextDispenseChain(c3);
 		}
 		
@@ -209,6 +209,6 @@ public class ChainOfResponsibilityATMMachineDemo {
 		atm.addMoney(Denomination.HUNDRED, 20);
 		atm.addMoney(Denomination.TEN, 23);
 		atm.addMoney(Denomination.TWENTY, 35);
-		atm.withDraw(4700);
+		atm.withDraw(1700);
 	}
 }
